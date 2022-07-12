@@ -27,7 +27,7 @@ Description=api data
 After=network.target
 
 [Service]
-ExecStart=/home/{users}/.nvm/versions/node/v14.15.4/bin/npm run dev --prefix /home/{users}/ultimate-api/backend/
+ExecStart=/{path_to_npm_file}/npm run dev --prefix /home/{users}/ultimate-api/backend/
 Restart=always
 WorkingDirectory=/home/{users}/my-service
 User={users}
