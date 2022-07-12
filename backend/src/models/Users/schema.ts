@@ -1,11 +1,12 @@
 import { Schema, Document, model } from 'mongoose'
-import { UsersSchema } from '../../types/models/Users'
+import { UsersSchema} from '../../types/models/Users'
 
-const collection = 'Users'
+export const collection = 'Users'
 
-export interface UsersSchemaWithDocument extends UsersSchema, Document {
+export interface UsersSchemaWithDocument extends UsersSchema, Document{
   // add more field
 }
+
 
 const usersSchema = new Schema<UsersSchemaWithDocument>({
   username: {
@@ -26,6 +27,12 @@ const usersSchema = new Schema<UsersSchemaWithDocument>({
     type: 'string'
   },
   surname: {
+    type: 'string'
+  },
+  temperature: {
+    type: 'string'
+  },
+  humidity: {
     type: 'string'
   }
 }, {

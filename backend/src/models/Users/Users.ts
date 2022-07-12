@@ -24,7 +24,7 @@ const comparePassword = (password: string, existsPassword: string): boolean => {
 
 export const generateAccessToken = (userId: string): string => {
   const token = jwt.sign({}, config.secret.accessToken, {
-    expiresIn: 60,
+    expiresIn: 60 * 60,
     audience: String(userId)
   })
 
@@ -38,7 +38,8 @@ const mapUserResponseObject = (userId: string, user: UsersSchemaWithDocument, ac
     name: user.name || '',
     surname: user.surname || '',
     email: user.email,
-    accessToken
+    accessToken,
+
   }
 
   return response
@@ -88,5 +89,5 @@ export default {
   createNewUser,
   userLogin,
   getUserById,
-  generateAccessToken
+  generateAccessToken,
 }

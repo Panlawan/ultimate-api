@@ -14,6 +14,16 @@ export type AuthRegisterBodyRequest = FastifyRequest<{
     email: string
     name: string
     surname: string
+    temper?: string
+    humidity?: string
+  }
+}>
+
+export type AuthDataBodyResponse = FastifyRequest<{
+  Body: {
+    userId: string
+    temperature?: string
+    humidity?: string
   }
 }>
 
@@ -23,6 +33,8 @@ export interface AuthLoginBodyResponse {
   email: string
   name: string
   surname: string
+  temper?: string
+  humidity?: string
   accessToken?: string
 }
 
