@@ -14,8 +14,34 @@ $ npm run dev
 
 How to ceate service for run after reboot
 -
-cd /etc/systemd/system
-sudo nano {name_of_service}.service
-- 
+```
+$ cd /etc/systemd/system
+
+$ sudo nano {name_of_service}.service
+```
 
 Add to yours service
+```
+[Unit]
+Description=api data
+After=network.target
+
+[Service]
+ExecStart=/home/nattawat/.nvm/versions/node/v14.15.4/bin/npm run dev --prefix /home/nattawat/ultimate-api/backend/
+Restart=always
+WorkingDirectory=/home/nattawat/my-service
+User=nattawat
+
+[Install]
+WantedBy=multi-user.target
+```
+and save it ```control + x -> y```
+
+Finally you can run the Service
+```
+$ sudo systemctl start {name_of_service}.service
+
+$ sudo systemctl status {name_of_service}.service
+
+$ sudo systemctl enable {name_of_service}.service
+```
