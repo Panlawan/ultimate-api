@@ -27,10 +27,10 @@ Description=api data
 After=network.target
 
 [Service]
-ExecStart=/home/nattawat/.nvm/versions/node/v14.15.4/bin/npm run dev --prefix /home/nattawat/ultimate-api/backend/
+ExecStart=/home/{users}/.nvm/versions/node/v14.15.4/bin/npm run dev --prefix /home/{users}/ultimate-api/backend/
 Restart=always
-WorkingDirectory=/home/nattawat/my-service
-User=nattawat
+WorkingDirectory=/home/{users}/my-service
+User={users}
 
 [Install]
 WantedBy=multi-user.target
