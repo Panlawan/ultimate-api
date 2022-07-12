@@ -16,3 +16,6 @@ How to ceate service for run after reboot
 -
 cd /etc/systemd/system
 sudo nano {name_of_service}.service
+- 
+
+Add to yours service
